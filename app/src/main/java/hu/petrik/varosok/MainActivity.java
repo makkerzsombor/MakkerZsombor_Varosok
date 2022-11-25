@@ -2,6 +2,7 @@ package hu.petrik.varosok;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,13 +18,17 @@ public class MainActivity extends AppCompatActivity {
         buttonListazas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: Listázás xml megnyitása
+                Intent intent = new Intent(MainActivity.this, ListActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         buttonUjfelvetele.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: Insert cml megnyitása
+                Intent intent = new Intent(MainActivity.this, InsertActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
