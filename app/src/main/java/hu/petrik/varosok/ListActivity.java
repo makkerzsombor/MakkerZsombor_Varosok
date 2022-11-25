@@ -45,7 +45,6 @@ public class ListActivity extends AppCompatActivity {
     private void init(){
         buttonVissza = findViewById(R.id.buttonVissza);
         listaHelye = findViewById(R.id.listaHelye);
-        //TODO: Lista feltoltese
         RequestTask task= new RequestTask("GET");
         task.execute();
     }
