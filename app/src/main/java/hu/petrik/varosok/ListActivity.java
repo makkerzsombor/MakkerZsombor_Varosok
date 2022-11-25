@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,7 @@ public class ListActivity extends AppCompatActivity {
     private void init(){
         buttonVissza = findViewById(R.id.buttonVissza);
         listaHelye = findViewById(R.id.listaHelye);
+        listaHelye.setMovementMethod(new ScrollingMovementMethod());
         RequestTask task= new RequestTask("GET");
         task.execute();
     }
@@ -115,7 +117,6 @@ public class ListActivity extends AppCompatActivity {
                 case "GET":
                     String content = response.getContent();
                     varosok = Arrays.asList(converter.fromJson(content, Varos[].class));
-                    // TODO: feltoltes
                     System.out.println("!"+varosok);
                     listaHelye.setText(varosok.toString());
                     break;
